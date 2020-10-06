@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 
 app.set('view engine', 'ejs');
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://admin:admin@ec2-18-217-11-83.us-east-2.compute.amazonaws.com:27017/counter_db?authMechanism=SCRAM-SHA-1';
 let globalCount = 0;
 
 async function updateCounter(client) {
@@ -40,9 +40,8 @@ async function main() {
         });
  
     } catch (e) {
-        console.error(e);
+        console.log(e);
     }
 }
 
 main();
-
