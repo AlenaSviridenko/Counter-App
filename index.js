@@ -31,7 +31,7 @@ async function main() {
         app.get('/', async function(req, res) {
             await updateCounter(client);
             res.render('index', {
-                counter: globalCount
+                counter: globalCount + 1
             });
         });
         
